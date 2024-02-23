@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 
+release=os.environ.get("VERSION"),
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -46,9 +48,9 @@ import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
 
 sentry_sdk.init(
-    dsn="YOUR_DSN",
+    dsn="https://0cab0721b420b8057fcb4b4dde176f21@o4506784465485824.ingest.sentry.io/4506784470925312",
     integrations=[DjangoIntegration()],
-    release=os.environ.get("VERSION"),
+    release=os.environ.get("1.0"),
     environment="Production"
 )
 
